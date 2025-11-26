@@ -20,17 +20,17 @@ export default function Education() {
     {
       title: "Water Conservation Workshops",
       description: "KW&SC conducts interactive workshops for schools and communities, teaching smart water usage and leak detection techniques to promote sustainable water practices.",
-      image: "/images/workshop.jpg",
+      image: "/otherImages/watershops.jpg",
     },
     {
       title: "Educational Seminars",
       description: "Regular seminars and webinars educate citizens about Karachi’s water supply system, sewerage management, and the importance of environmental sustainability.",
-      image: "/images/seminar.jpg",
+      image: "/otherImages/edu-seminear.jpg",
     },
     {
       title: "Digital Learning & Awareness",
       description: "Online resources, infographics, and e-learning modules help students and the public understand water treatment, wastewater management, and smart city water solutions.",
-      image: "/images/digital-learning.jpg",
+      image: "/otherImages/education.jpg",
     },
   ];
 

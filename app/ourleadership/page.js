@@ -5,46 +5,95 @@ import { Globe } from "lucide-react";
 
 export default function Leadership() {
   const pastLeaders = [
-    {
-      name: "Engr. Syed Najib Ahmed",
-      role: "Former Managing Director",
-      period: "2022 - 2023",
-      img: "/leaders/najib.jpg",
+    // {
+    //   name: "Engr. Syed Najib Ahmed",
+    //   role: "Former Managing Director",
+    //   period: "2022 - 2023",
+    //   img: "/leaders/najib.jpg",
+    // },
+    // {
+    //   name: "Asadullah Khan",
+    //   role: "Former Managing Director",
+    //   period: "2020 - 2022",
+    //   img: "/leaders/asadullah.jpg",
+    // },
+    // {
+      //   name: "Hashim Raza Zaidi",
+      //   role: "Former Managing Director",
+      //   period: "2018 - 2020",
+      //   img: "/leaders/hashim.jpg",
+      // },
+      
+
+
+      // Dummy Data Below for Representation
+
+
+      {
+      name: "Muhammad Saqib",
+      role: "Deputy Managing Director-HRD&A",
+      img: "/images-leader/saqib.jpeg",
     },
     {
-      name: "Asadullah Khan",
-      role: "Former Managing Director",
-      period: "2020 - 2022",
-      img: "/leaders/asadullah.jpg",
+      name: "Khurram Shehzad",
+      role: "Deputy Managing Director-Planning",
+      img: "/images-leader/khurram.jpg",
     },
     {
-      name: "Hashim Raza Zaidi",
-      role: "Former Managing Director",
-      period: "2018 - 2020",
-      img: "/leaders/hashim.jpg",
-    },
+      name: "Minhaj Ur Rehman",
+      role: "Chief Internal Auditor",
+      img: "/images-leader/minhaj.jpg",
+    }
   ];
 
   const managementTeam = [
+    // {
+    //   name: "Ahmed Ali Siddiqui",
+    //   role: "Managing Director",
+    //   img: "/leaders/salahuddin.jpg",
+    // },
+    // {
+    //   name: "Asadullah Khan",
+    //   role: "Chief Operating Officer",
+    //   img: "/leaders/imran.jpg",
+    // },
+    // {
+    //   name: "Muhammad Ali Sheikh",
+    //   role: "Chief Engineer Water Supply",
+    //   img: "/leaders/sarah.jpg",
+    // },
+    // {
+    //   name: "Aftab Alam Chandio",
+    //   role: "Chief Engineer Sewerage",
+    //   img: "/leaders/bilal.jpg",
+    // },
+
+// Dummy Data Below for Representation
+
     {
-      name: "Ahmed Ali Siddiqui",
-      role: "Managing Director",
-      img: "/leaders/salahuddin.jpg",
+      name: "Muhammad Saqib",
+      role: "Deputy Managing Director-HRD&A",
+      img: "/images-leader/saqib.jpeg",
     },
     {
-      name: "Asadullah Khan",
-      role: "Chief Operating Officer",
-      img: "/leaders/imran.jpg",
+      name: "Khurram Shehzad",
+      role: "Deputy Managing Director-Planning",
+      img: "/images-leader/khurram.jpg",
     },
     {
-      name: "Muhammad Ali Sheikh",
-      role: "Chief Engineer Water Supply",
-      img: "/leaders/sarah.jpg",
+      name: "Minhaj Ur Rehman",
+      role: "Chief Internal Auditor",
+      img: "/images-leader/minhaj.jpg",
     },
     {
-      name: "Aftab Alam Chandio",
-      role: "Chief Engineer Sewerage",
-      img: "/leaders/bilal.jpg",
+      name: "Abdul Rehman",
+      role: "Deputy Chief Finance Officer",
+      img: "/images-leader/abul Rehman.jpg",
+    },
+    {
+      name: "Abdul Raqeeb Phul",
+      role: "Secretary to the Board, KW&SC",
+      img: "/images-leader/Abdul Raqeeb.png",
     },
   ];
 
