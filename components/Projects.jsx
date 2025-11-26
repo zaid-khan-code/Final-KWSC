@@ -1,13 +1,13 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { 
-    Waves, 
-    Zap, 
-    Droplet, 
-    Cpu, 
-    HardHat, 
-    TrendingUp, 
-    Clock, 
+import {
+    Waves,
+    Zap,
+    Droplet,
+    Cpu,
+    HardHat,
+    TrendingUp,
+    Clock,
     CheckCircle,
     Activity
 } from "lucide-react";
@@ -73,7 +73,7 @@ const projectsData = [
 
 // Reusable component for a single project card
 const ProjectCard = ({ project, index }) => {
-    
+
     // Define dynamic Tailwind classes based on project color and status
     // Using darker borders and text for the light theme
     const colorClasses = {
@@ -83,7 +83,7 @@ const ProjectCard = ({ project, index }) => {
         purple: { border: 'border-purple-300', shadow: 'shadow-purple-200', text: 'text-purple-600', bg: 'bg-purple-50', progress: 'bg-purple-500' },
         red: { border: 'border-red-300', shadow: 'shadow-red-200', text: 'text-red-600', bg: 'bg-red-50', progress: 'bg-red-500' },
     };
-    
+
     // Status badges using light theme colors
     const statusBadges = {
         'COMPLETED': 'bg-emerald-500 text-white',
@@ -96,7 +96,7 @@ const ProjectCard = ({ project, index }) => {
     const currentStatusBadge = statusBadges[project.status] || 'bg-gray-500 text-white';
 
     return (
-        <div 
+        <div
             className={`relative bg-white rounded-xl overflow-hidden border ${currentClasses.border} shadow-lg transition-all duration-500 flex flex-col h-full cursor-pointer hover:shadow-xl hover:-translate-y-1`}
             style={{
                 animation: `fadeInUp 0.6s ease-out forwards`,
@@ -106,7 +106,7 @@ const ProjectCard = ({ project, index }) => {
             }}
         >
             {/* Image & Header */}
-            <div className="relative h-48 overflow-hidden">
+            <div className="relative h-32 sm:h-40 md:h-48 overflow-hidden">
                 <img
                     src={project.image}
                     alt={project.title}
@@ -117,62 +117,62 @@ const ProjectCard = ({ project, index }) => {
                 <div className="absolute inset-0 bg-black/10"></div> {/* Soft overlay */}
 
                 {/* Status Badge */}
-                <div className="absolute top-4 right-4 z-10">
-                    <span className={`px-3 py-1 text-xs font-bold uppercase rounded-full ${currentStatusBadge} shadow`}>
+                <div className="absolute top-2 sm:top-3 right-2 sm:right-3 z-10">
+                    <span className={`px-2 sm:px-3 py-0.5 sm:py-1 text-[9px] sm:text-xs font-bold uppercase rounded-full ${currentStatusBadge} shadow`}>
                         {project.status}
                     </span>
                 </div>
-                
+
                 {/* Category Badge */}
-                <div className="absolute bottom-4 left-4 z-10">
-                    <span className={`px-3 py-1 text-xs font-mono uppercase rounded-full border ${currentClasses.border} ${currentClasses.bg} ${currentClasses.text}`}>
+                <div className="absolute bottom-2 sm:bottom-3 left-2 sm:left-3 z-10">
+                    <span className={`px-2 sm:px-3 py-0.5 sm:py-1 text-[9px] sm:text-xs font-mono uppercase rounded-full border ${currentClasses.border} ${currentClasses.bg} ${currentClasses.text}`}>
                         {project.category}
                     </span>
                 </div>
             </div>
 
             {/* Content Body */}
-            <div className="p-6 flex flex-col flex-grow relative">
-                
-                <div className="flex items-center gap-3 mb-3">
-                    <div className={`text-2xl ${currentClasses.text}`}>
+            <div className="p-3 sm:p-4 md:p-5 lg:p-6 flex flex-col flex-grow relative">
+
+                <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
+                    <div className={`text-lg sm:text-xl md:text-2xl ${currentClasses.text}`}>
                         {project.icon}
                     </div>
-                    <h3 className="text-xl font-extrabold text-gray-900 leading-snug line-clamp-2">
+                    <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-extrabold text-gray-900 leading-snug line-clamp-2">
                         {project.title}
                     </h3>
                 </div>
 
-                <p className="text-gray-600 text-sm leading-relaxed mb-6 line-clamp-3 flex-grow">
+                <p className="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6 line-clamp-3 flex-grow">
                     {project.scope}
                 </p>
 
                 {/* Project Metrics (Physical Progress) */}
-                <div className="mt-auto pt-4 border-t border-gray-100 space-y-3">
-                    
-                    <div className="flex items-center justify-between text-gray-700 text-sm">
-                        <div className="flex items-center gap-2 text-green-600 font-semibold">
-                            <TrendingUp className="w-4 h-4" />
+                <div className="mt-auto pt-3 sm:pt-4 border-t border-gray-100 space-y-2 sm:space-y-3">
+
+                    <div className="flex items-center justify-between text-gray-700 text-xs sm:text-sm">
+                        <div className="flex items-center gap-1.5 sm:gap-2 text-green-600 font-semibold">
+                            <TrendingUp className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4" />
                             <span>Physical Progress:</span>
                         </div>
                         <span className="font-bold text-gray-900">{project.progress}%</span>
                     </div>
 
                     {/* Progress Bar */}
-                    <div className="w-full bg-gray-200 rounded-full h-2 mt-2">
-                        <div 
-                            className={`h-2 rounded-full transition-all duration-1000 ${currentClasses.progress}`}
+                    <div className="w-full bg-gray-200 rounded-full h-1.5 sm:h-2 mt-2">
+                        <div
+                            className={`h-1.5 sm:h-2 rounded-full transition-all duration-1000 ${currentClasses.progress}`}
                             style={{ width: `${project.progress}%` }}
                         ></div>
                     </div>
                 </div>
             </div>
-            
+
             {/* Footer Link */}
-            <div className="p-4 border-t border-gray-100 flex justify-end">
-                <a href={`#project-${project.id}`} className={`flex items-center gap-1 text-sm font-bold ${currentClasses.text} hover:text-opacity-80 transition-colors group/link`}>
+            <div className="p-3 sm:p-4 border-t border-gray-100 flex justify-end">
+                <a href={`#project-${project.id}`} className={`flex items-center gap-0.5 sm:gap-1 text-xs sm:text-sm font-bold ${currentClasses.text} hover:text-opacity-80 transition-colors group/link`}>
                     VIEW DETAILS
-                    <CheckCircle className="w-4 h-4 transition-transform group-hover/link:translate-x-1" />
+                    <CheckCircle className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 transition-transform group-hover/link:translate-x-1" />
                 </a>
             </div>
         </div>
@@ -202,15 +202,15 @@ export default function Projects() {
         }, 800);
 
         return () => {
-          clearTimeout(timer);
-          document.head.removeChild(style);
+            clearTimeout(timer);
+            document.head.removeChild(style);
         };
     }, []);
 
     return (
         // Main container uses a light background
-        <section className="min-h-screen bg-gray-50 py-24 relative overflow-hidden font-sans selection:bg-blue-100 selection:text-gray-800">
-            
+        <section className="min-h-screen bg-gray-50 py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24 relative overflow-hidden font-sans selection:bg-blue-100 selection:text-gray-800">
+
             {/* --- Subtle Background Elements (Retained for depth) --- */}
             {/* Soft, light gradient glow */}
             <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-100/50 rounded-full blur-[100px] pointer-events-none mix-blend-multiply opacity-30"></div>
@@ -218,41 +218,41 @@ export default function Projects() {
             <div className="absolute inset-0 bg-white/50 [mask-image:radial-gradient(ellipse_at_center,transparent_20%,white)] pointer-events-none"></div>
 
             {/* Content Container */}
-            <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
-                
+            <div className="relative z-10 max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+
                 {/* Header */}
-                <div className="text-center mb-20">
+                <div className="text-center mb-8 sm:mb-12 md:mb-16 lg:mb-20">
                     {/* Light Theme Badge */}
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-200 text-blue-600 text-sm font-semibold mb-6 shadow-sm">
-                        <Activity className="w-4 h-4 animate-pulse" />
+                    <div className="inline-flex items-center gap-2 px-2 sm:px-3 md:px-4 py-1 sm:py-1.5 md:py-2 rounded-full bg-blue-50 border border-blue-200 text-blue-600 text-[10px] sm:text-xs md:text-sm font-semibold mb-3 sm:mb-4 md:mb-6 shadow-sm">
+                        <Activity className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 animate-pulse" />
                         <span>INFRASTRUCTURE DEPLOYMENT STATUS</span>
                     </div>
-                    
+
                     {/* Light Theme Heading */}
-                    <h1 className="text-5xl md:text-7xl font-extrabold text-gray-900 tracking-tight mb-6">
+                    <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-gray-900 tracking-tight mb-3 sm:mb-4 md:mb-6">
                         MAJOR <span className="text-blue-600">PROJECTS</span>
                     </h1>
-                    
-                    <p className="max-w-2xl mx-auto text-lg text-gray-600 leading-relaxed">
+
+                    <p className="max-w-2xl mx-auto text-xs sm:text-sm md:text-base lg:text-lg text-gray-600 leading-relaxed px-2 sm:px-0">
                         Tracking the physical and financial progress of Federal (PSDP) and Provincial (ADP) development schemes.
                     </p>
                 </div>
 
                 {/* Loading State */}
                 {loading ? (
-                    <div className="flex flex-col justify-center items-center h-80">
+                    <div className="flex flex-col justify-center items-center h-60 sm:h-72 md:h-80">
                         <div className="relative">
                             {/* Loading spinner uses a darker border for visibility */}
-                            <div className="w-16 h-16 border-4 border-gray-300 border-t-blue-500 rounded-full animate-spin"></div>
+                            <div className="w-12 sm:w-14 md:w-16 h-12 sm:h-14 md:h-16 border-3 sm:border-4 border-gray-300 border-t-blue-500 rounded-full animate-spin"></div>
                             <div className="absolute inset-0 flex items-center justify-center">
-                                <div className="w-2 h-2 bg-blue-500 rounded-full animate-ping"></div>
+                                <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-blue-500 rounded-full animate-ping"></div>
                             </div>
                         </div>
-                        <p className="mt-6 text-blue-600 font-medium text-base tracking-wider animate-pulse">LOADING PROJECT DATA...</p>
+                        <p className="mt-4 sm:mt-6 text-blue-600 font-medium text-xs sm:text-sm md:text-base tracking-wider animate-pulse">LOADING PROJECT DATA...</p>
                     </div>
                 ) : (
                     /* Projects Grid */
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 lg:gap-8">
                         {projects.map((item, index) => (
                             <ProjectCard key={item.id} project={item} index={index} />
                         ))}
@@ -260,17 +260,17 @@ export default function Projects() {
                 )}
 
                 {/* Bottom Call to Action */}
-                <div className="text-center mt-24">
+                <div className="text-center mt-12 sm:mt-16 md:mt-20 lg:mt-24">
                     <a
                         href="https://www.kwsc.gos.pk/our-projects"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group relative inline-flex items-center justify-center px-10 py-4 bg-white overflow-hidden rounded-full border border-blue-400 text-blue-600 font-bold uppercase tracking-wider hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl"
+                        className="group relative inline-flex items-center justify-center px-6 sm:px-8 md:px-10 py-2.5 sm:py-3 md:py-4 bg-white overflow-hidden rounded-full border border-blue-400 text-blue-600 font-bold uppercase tracking-wider text-xs sm:text-sm md:text-base hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl"
                     >
                         <span className="absolute w-0 h-0 transition-all duration-500 ease-out bg-blue-500 rounded-full group-hover:w-full group-hover:h-full opacity-10"></span>
-                        <span className="relative flex items-center gap-3">
+                        <span className="relative flex items-center gap-2 sm:gap-3">
                             View Historical Project Archives
-                            <Clock className="w-5 h-5 transition-transform group-hover:rotate-12" />
+                            <Clock className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 transition-transform group-hover:rotate-12" />
                         </span>
                     </a>
                 </div>

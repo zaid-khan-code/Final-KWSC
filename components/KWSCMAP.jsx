@@ -1,6 +1,6 @@
 'use client';
 import React, { useState, useMemo } from "react";
-import { MapPin, Phone, Mail, Building2, HardHat, Zap } from "lucide-react";
+import { MapPin, Phone, Mail, Building2, HardHat, Zap, Menu, X, ChevronDown } from "lucide-react";
 
 export default function Kwscmap() {
   // Define all possible KW&SC locations with their details
@@ -52,7 +52,9 @@ export default function Kwscmap() {
   ], []);
 
   const [activeLocationId, setActiveLocationId] = useState('hq');
-  
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [detailsOpen, setDetailsOpen] = useState(false);
+
   // Find the currently active location object
   const activeLocation = locations.find(loc => loc.id === activeLocationId);
 
@@ -61,29 +63,59 @@ export default function Kwscmap() {
   }
 
   return (
-    <div className="py-12 md:py-20 bg-gray-50">
-      <div className="relative w-full aspect-[4/3] md:aspect-[16/7] rounded-3xl overflow-hidden shadow-2xl transition-all duration-500">
-        
-        {/* Location Selector */}
-        {/* On mobile, use a clean scrollable row for tabs */}
-        <div className="absolute top-4 left-4 right-4 z-10">
-          <div className="bg-white/95 backdrop-blur-md px-2 py-2 rounded-xl shadow-xl border border-blue-100 flex flex-nowrap overflow-x-auto gap-2">
+    <div className="py-6 sm:py-10 md:py-16 lg:py-20 bg-gray-50">
+      <div className="relative w-full aspect-[4/3] md:aspect-[16/7] rounded-lg sm:rounded-xl md:rounded-3xl overflow-hidden shadow-lg md:shadow-2xl transition-all duration-500">
+
+        {/* Location Selector - Hamburger Menu on Mobile */}
+        {/* Desktop: Horizontal tabs (hidden md:flex) */}
+        <div className="absolute top-3 sm:top-4 left-3 sm:left-4 right-3 sm:right-4 z-20">
+          {/* Mobile: Hamburger Menu Button */}
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="md:hidden flex items-center justify-between bg-white/90 backdrop-blur-md px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg border border-blue-200 shadow-lg w-full"
+          >
+            <span className="font-semibold text-xs sm:text-sm text-gray-900 truncate">
+              {activeLocation?.shortName}
+            </span>
+            <ChevronDown className={`w-4 h-4 sm:w-5 sm:h-5 text-blue-600 transition-transform ${menuOpen ? 'rotate-180' : ''}`} />
+          </button>
+
+          {/* Mobile: Dropdown Menu */}
+          <div className={`md:hidden absolute top-full left-3 sm:left-4 right-3 sm:right-4 mt-2 bg-white/95 backdrop-blur-md border border-blue-200 rounded-lg shadow-xl overflow-hidden transition-all duration-300 ${menuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
+            {locations.map((loc) => (
+              <button
+                key={loc.id}
+                onClick={() => {
+                  setActiveLocationId(loc.id);
+                  setMenuOpen(false);
+                }}
+                className={`w-full flex items-center gap-2 px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm font-semibold transition-colors border-b border-blue-100 last:border-b-0 ${activeLocationId === loc.id
+                    ? 'bg-blue-50 text-blue-700'
+                    : 'text-gray-700 hover:bg-gray-50 hover:text-blue-700'
+                  }`}
+              >
+                {loc.icon}
+                <span className="truncate">{loc.name}</span>
+              </button>
+            ))}
+          </div>
+
+          {/* Desktop: Horizontal Tabs */}
+          <div className="hidden md:flex bg-white/95 backdrop-blur-md px-2 sm:px-3 md:px-4 py-2 sm:py-2.5 md:py-3 rounded-lg sm:rounded-xl md:rounded-2xl shadow-lg md:shadow-xl border border-blue-100 flex-nowrap overflow-x-auto gap-1 sm:gap-2 md:gap-3">
             {locations.map((loc) => (
               <button
                 key={loc.id}
                 onClick={() => setActiveLocationId(loc.id)}
-                className={`flex items-center gap-2 px-3 py-2 text-sm md:text-base font-semibold rounded-lg transition-all duration-200 transform hover:scale-[1.03] flex-shrink-0 whitespace-nowrap
+                className={`flex items-center gap-1 sm:gap-2 px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 md:py-2.5 text-xs sm:text-sm md:text-base font-semibold rounded-lg transition-all duration-200 transform hover:scale-[1.03] flex-shrink-0 whitespace-nowrap
                   ${activeLocationId === loc.id
-                    ? 'bg-blue-600 text-white shadow-blue-400/50'
+                    ? 'bg-blue-600 text-white shadow-lg'
                     : 'bg-gray-100 text-gray-700 hover:bg-blue-50 hover:text-blue-700'
                   }
                 `}
-                aria-current={activeLocationId === loc.id ? 'location' : undefined}
                 title={loc.name}
               >
                 {loc.icon}
-                <span className="hidden sm:inline">{loc.name}</span>
-                <span className="sm:hidden">{loc.shortName}</span>
+                <span>{loc.name}</span>
               </button>
             ))}
           </div>
@@ -103,36 +135,57 @@ export default function Kwscmap() {
           className="transition-opacity duration-700 opacity-100"
         />
 
-        {/* Glassmorphism overlay for contact details - Dynamically updated */}
-        {/* Positioned on the bottom left for mobile viewing space */}
-        <div className="absolute bottom-4 left-4 right-4 md:bottom-10 md:right-10 md:left-auto bg-white/85 backdrop-blur-md rounded-xl p-6 shadow-2xl max-w-full md:max-w-md border border-blue-200 transition-all duration-300 transform hover:translate-y-[-2px]">
-          <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3 border-b pb-2 border-blue-200 flex items-center gap-2">
-             {activeLocation.icon} {activeLocation.name}
+        {/* Glassmorphism overlay for contact details - Desktop Always Show */}
+        {/* Mobile: Hidden until button clicked (slide-up modal) */}
+        <div className={`absolute inset-x-0 bottom-0 md:bottom-10 md:right-10 md:left-auto md:inset-auto bg-white/90 md:bg-white/85 backdrop-blur-md rounded-t-2xl md:rounded-2xl p-4 sm:p-5 md:p-6 shadow-2xl max-w-full md:max-w-md border border-blue-200 transition-all duration-300 transform ${detailsOpen ? 'translate-y-0 md:translate-y-[-4px]' : 'translate-y-full md:translate-y-0'
+          }`}>
+          <div className="flex items-center justify-between md:hidden mb-3 sm:mb-4">
+            <h3 className="text-sm sm:text-base font-bold text-gray-900 flex items-center gap-1.5 sm:gap-2 flex-1 min-w-0">
+              {activeLocation?.icon} <span className="truncate">{activeLocation?.shortName}</span>
+            </h3>
+            <button
+              onClick={() => setDetailsOpen(false)}
+              className="flex-shrink-0 p-1 hover:bg-gray-100 rounded-lg transition-colors"
+            >
+              <X className="w-4 h-4 sm:w-5 sm:h-5 text-gray-600" />
+            </button>
+          </div>
+
+          <h3 className="hidden md:flex text-sm sm:text-base md:text-lg lg:text-xl font-bold text-gray-900 mb-2 sm:mb-3 md:mb-4 border-b pb-1.5 sm:pb-2 md:pb-3 border-blue-200 items-center gap-1.5 sm:gap-2">
+            {activeLocation?.icon} <span className="truncate">{activeLocation?.name}</span>
           </h3>
-          
-          <div className="space-y-3">
-            <div className="flex items-start gap-3">
-              <MapPin className="text-blue-600 w-5 h-5 flex-shrink-0 mt-1" />
-              <p className="text-gray-800 font-medium text-sm md:text-base leading-relaxed">
-                {activeLocation.address}
+
+          <div className="space-y-2 sm:space-y-2.5 md:space-y-3">
+            <div className="flex items-start gap-2 sm:gap-2.5 md:gap-3">
+              <MapPin className="text-blue-600 w-4 h-4 sm:w-4 sm:h-4 md:w-5 md:h-5 flex-shrink-0 mt-0.5 sm:mt-1 md:mt-1" />
+              <p className="text-gray-800 font-medium text-xs sm:text-sm md:text-base leading-relaxed">
+                {activeLocation?.address}
               </p>
             </div>
-            
-            <div className="flex items-center gap-3">
-              <Phone className="text-blue-600 w-5 h-5 flex-shrink-0" />
-              <a href={`tel:${activeLocation.phone.replace(/[() -]/g, '')}`} className="text-gray-800 font-medium text-sm md:text-base hover:text-blue-700 transition-colors">
-                {activeLocation.phone}
+
+            <div className="flex items-center gap-2 sm:gap-2.5 md:gap-3">
+              <Phone className="text-blue-600 w-4 h-4 sm:w-4 sm:h-4 md:w-5 md:h-5 flex-shrink-0" />
+              <a href={`tel:${activeLocation?.phone.replace(/[() -]/g, '')}`} className="text-gray-800 font-medium text-xs sm:text-sm md:text-base hover:text-blue-700 transition-colors truncate">
+                {activeLocation?.phone}
               </a>
             </div>
-            
-            <div className="flex items-center gap-3">
-              <Mail className="text-blue-600 w-5 h-5 flex-shrink-0" />a
-              <a href={`mailto:${activeLocation.email}`} className="text-gray-800 font-medium text-sm md:text-base hover:text-blue-700 transition-colors truncate">
-                {activeLocation.email}
+
+            <div className="flex items-center gap-2 sm:gap-2.5 md:gap-3">
+              <Mail className="text-blue-600 w-4 h-4 sm:w-4 sm:h-4 md:w-5 md:h-5 flex-shrink-0" />
+              <a href={`mailto:${activeLocation?.email}`} className="text-gray-800 font-medium text-xs sm:text-sm md:text-base hover:text-blue-700 transition-colors truncate">
+                {activeLocation?.email}
               </a>
             </div>
           </div>
         </div>
+
+        {/* Mobile: Floating Button to Open Details Modal */}
+        <button
+          onClick={() => setDetailsOpen(!detailsOpen)}
+          className={`md:hidden absolute bottom-4 sm:bottom-5 right-4 sm:right-5 bg-blue-600 hover:bg-blue-700 text-white px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg sm:rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 text-xs sm:text-sm font-semibold flex items-center gap-1.5 sm:gap-2 ${detailsOpen ? 'opacity-0 invisible' : 'opacity-100 visible'}`}
+        >
+          📍 Details
+        </button>
       </div>
     </div>
   );
