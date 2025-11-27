@@ -39,7 +39,7 @@ export default function WhatWeDo() {
       {loading && <Loader />}
 
       {/* CYBER HERO BANNER */}
-      <section className="relative h-screen sm:h-[65vh] md:h-[70vh] lg:h-[75vh] xl:h-[60vh] transition-opacity duration-700 bg-[url('/teentalwarkarachi.gif')] bg-cover bg-center flex justify-center items-center overflow-hidden text-white">
+      <section className="relative h-screen sm:h-screen md:h-screen lg:h-screen xl:h-screen 2xl:h-screen transition-opacity duration-700 bg-[url('/teentalwarkarachi.gif')] bg-cover bg-center flex justify-center items-center overflow-hidden text-white">
         {/* Dark overlay */}
         <div className="absolute inset-0 bg-slate-900/80 z-0"></div>
 
