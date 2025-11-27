@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { Fade } from "react-awesome-reveal";
 import Link from "next/link";
 import { FiDownload, FiSearch, FiChevronDown, FiChevronUp } from "react-icons/fi";
+import { Globe } from "lucide-react";
 
 // --- Dummy Data Expansion for 10+ items ---
 const allOpenTenders = [
@@ -160,31 +161,31 @@ const SearchFilter = React.memo(({ onFilterChange, allTenders }) => {
 
   return (
     <div className="mb-12">
-      <div className="bg-white rounded-xl shadow-lg p-4 border border-blue-200">
+      <div className="bg-white rounded-lg sm:rounded-xl md:rounded-xl lg:rounded-2xl shadow-md sm:shadow-lg md:shadow-lg lg:shadow-xl p-3 sm:p-4 md:p-5 lg:p-6 border border-blue-200">
         <button
           className="flex justify-between items-center w-full text-left"
           onClick={() => setIsExpanded(!isExpanded)}
           aria-expanded={isExpanded}
           aria-controls="filter-controls"
         >
-          <h3 className="text-lg font-bold text-blue-900 flex items-center">
-            <FiSearch className="mr-2 text-blue-600" />
+          <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-blue-900 flex items-center">
+            <FiSearch className="mr-1.5 sm:mr-2 md:mr-2 lg:mr-3 text-blue-600 w-4 sm:w-4.5 md:w-5 lg:w-6 h-4 sm:h-4.5 md:h-5 lg:h-6" />
             Search & Filter Open Tenders
           </h3>
-          {isExpanded ? <FiChevronUp className="w-5 h-5 text-blue-600" /> : <FiChevronDown className="w-5 h-5 text-blue-600" />}
+          {isExpanded ? <FiChevronUp className="w-4 sm:w-4.5 md:w-5 lg:w-5 h-4 sm:h-4.5 md:h-5 lg:h-5 text-blue-600" /> : <FiChevronDown className="w-4 sm:w-4.5 md:w-5 lg:w-5 h-4 sm:h-4.5 md:h-5 lg:h-5 text-blue-600" />}
         </button>
 
         <div id="filter-controls" className={`transition-all duration-300 ease-in-out ${isExpanded ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}>
-          <div className="pt-4 border-t mt-4 border-gray-100">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="pt-3 sm:pt-4 md:pt-4 lg:pt-5 border-t mt-3 sm:mt-4 md:mt-4 lg:mt-5 border-gray-100">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 md:gap-5 lg:gap-6">
               {/* Search Bar */}
               <div>
-                <label htmlFor="search" className="block text-sm font-medium text-gray-700 mb-1">Search by Title/Description</label>
+                <label htmlFor="search" className="block text-xs sm:text-sm md:text-sm lg:text-base font-medium text-gray-700 mb-1.5 sm:mb-2">Search by Title/Description</label>
                 <input
                   type="text"
                   id="search"
                   placeholder="e.g. Water, Pipeline, IT"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full px-2.5 sm:px-3 md:px-3 lg:px-4 py-1.5 sm:py-2 md:py-2 lg:py-2.5 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 text-xs sm:text-sm md:text-sm lg:text-base"
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                 />
@@ -192,10 +193,10 @@ const SearchFilter = React.memo(({ onFilterChange, allTenders }) => {
 
               {/* Type Filter */}
               <div>
-                <label htmlFor="type-filter" className="block text-sm font-medium text-gray-700 mb-1">Filter by Type</label>
+                <label htmlFor="type-filter" className="block text-xs sm:text-sm md:text-sm lg:text-base font-medium text-gray-700 mb-1.5 sm:mb-2">Filter by Type</label>
                 <select
                   id="type-filter"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 bg-white"
+                  className="w-full px-2.5 sm:px-3 md:px-3 lg:px-4 py-1.5 sm:py-2 md:py-2 lg:py-2.5 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 bg-white text-xs sm:text-sm md:text-sm lg:text-base"
                   value={filterType}
                   onChange={(e) => setFilterType(e.target.value)}
                 >
@@ -286,44 +287,44 @@ export default function Tenders() {
 
     return (
       <Fade key={item.id || index} direction="up" triggerOnce duration={600} delay={index * 50}>
-        <div className={`bg-white rounded-xl shadow-lg p-6 flex flex-col justify-between hover:shadow-xl transition-shadow border-t-4 ${cardClasses.split(' ')[3]}`}>
+        <div className={`bg-white rounded-lg sm:rounded-xl md:rounded-xl lg:rounded-2xl shadow-md sm:shadow-lg md:shadow-lg lg:shadow-xl p-4 sm:p-5 md:p-6 lg:p-7 xl:p-8 2xl:p-10 flex flex-col justify-between hover:shadow-lg md:hover:shadow-2xl transition-shadow border-t-4 ${cardClasses.split(' ')[3]}`}>
           {/* Header/Info */}
           <div>
-            <span className={`px-3 py-1 rounded-full text-xs font-semibold ${chipColor} mb-3 inline-block`}>
+            <span className={`px-2.5 sm:px-3 md:px-3.5 lg:px-4 py-1 sm:py-1.5 md:py-1.5 lg:py-2 rounded-full text-xs font-semibold ${chipColor} mb-2 sm:mb-3 md:mb-3 lg:mb-4 inline-block`}>
               {status}
             </span>
-            <h3 className="text-lg font-bold text-gray-900 mb-2 line-clamp-2" title={item.title}>{item.title}</h3>
-            <p className="text-gray-600 text-sm mb-4 line-clamp-3">{item.description}</p>
+            <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-gray-900 mb-1.5 sm:mb-2 md:mb-2 lg:mb-3 line-clamp-2" title={item.title}>{item.title}</h3>
+            <p className="text-gray-600 text-xs sm:text-xs md:text-sm lg:text-base mb-3 sm:mb-4 md:mb-4 lg:mb-5 line-clamp-3">{item.description}</p>
           </div>
 
           {/* Footer/Actions */}
-          <div className="mt-auto pt-3">
-            <span className="text-gray-500 text-xs block mb-3">
+          <div className="mt-auto pt-2 sm:pt-3 md:pt-3 lg:pt-4">
+            <span className="text-gray-500 text-xs block mb-2 sm:mb-2.5 md:mb-3 lg:mb-3">
               {tabName === "open" ? "Due Date:" : "Closed/Cancelled Date:"} **{item.date}**
             </span>
 
             {/* Action Buttons */}
-            <div className="flex justify-between items-center">
+            <div className="flex justify-between items-center gap-2">
               {tabName === "open" ? (
                 <button
                   onClick={() => setOpenId(isExpanded ? null : item.id)}
-                  className="inline-flex items-center text-blue-600 hover:text-blue-800 text-sm font-semibold transition-colors"
+                  className="inline-flex items-center text-blue-600 hover:text-blue-800 text-xs sm:text-xs md:text-sm lg:text-base font-semibold transition-colors"
                   aria-expanded={isExpanded}
                   aria-controls={`details-${item.id}`}
                 >
                   {isExpanded ? "Hide Details" : "View More"}
-                  {isExpanded ? <FiChevronUp className="w-4 h-4 ml-1" /> : <FiChevronDown className="w-4 h-4 ml-1" />}
+                  {isExpanded ? <FiChevronUp className="w-3 sm:w-3 md:w-4 lg:w-4 h-3 sm:h-3 md:h-4 lg:h-4 ml-1" /> : <FiChevronDown className="w-3 sm:w-3 md:w-4 lg:w-4 h-3 sm:h-3 md:h-4 lg:h-4 ml-1" />}
                 </button>
               ) : (
-                <span className="text-sm text-gray-500 italic">
+                <span className="text-xs sm:text-xs md:text-sm lg:text-base text-gray-500 italic">
                   {tabName === "closed" ? "Tender Closed" : "Tender Cancelled"}
                 </span>
               )}
 
               {/* Download button only for open tenders */}
               {tabName === "open" && (
-                <Link href={item.downloadLink} className="text-gray-400 hover:text-green-600 transition-colors ml-4" title="Download Tender Documents">
-                  <FiDownload className="w-5 h-5" />
+                <Link href={item.downloadLink} className="text-gray-400 hover:text-green-600 transition-colors ml-2" title="Download Tender Documents">
+                  <FiDownload className="w-4 sm:w-4 md:w-5 lg:w-5 h-4 sm:h-4 md:h-5 lg:h-5" />
                 </Link>
               )}
             </div>
@@ -331,8 +332,8 @@ export default function Tenders() {
 
           {/* Expanded Details (For Open Tenders Only) */}
           {isExpanded && (
-            <div id={`details-${item.id}`} className="mt-4 pt-4 border-t border-blue-200">
-              <p className="text-sm text-gray-700 leading-relaxed bg-blue-50 p-3 rounded-lg font-medium">{item.fullDetails}</p>
+            <div id={`details-${item.id}`} className="mt-3 sm:mt-4 md:mt-4 lg:mt-5 pt-3 sm:pt-4 md:pt-4 lg:pt-5 border-t border-blue-200">
+              <p className="text-xs sm:text-xs md:text-sm lg:text-base text-gray-700 leading-relaxed bg-blue-50 p-2.5 sm:p-3 md:p-3.5 lg:p-4 rounded-lg font-medium">{item.fullDetails}</p>
             </div>
           )}
         </div>
@@ -345,52 +346,68 @@ export default function Tenders() {
       {loading && <Loader />}
 
       {/* Hero Section */}
-     
-      <section className="relative h-[60vh] transition-opacity duration-700 bg-[url('/karachicharminar.gif')] bg-cover bg-center text-white flex justify-center items-center overflow-hidden">
-        {/* Dark overlay to blend with dark theme */}
+
+      <section className="relative h-screen sm:h-screen md:h-screen lg:h-screen xl:h-screen 2xl:h-screen transition-opacity duration-700 bg-[url('/karachicharminar.gif')] bg-cover bg-center text-white flex justify-center items-center overflow-hidden">
+        {/* Dark overlay */}
         <div className="absolute inset-0 bg-slate-900/80 z-0"></div>
+
         {/* Cyber Grid Overlay */}
         <div className="absolute inset-0 tech-grid-bg opacity-30 z-0"></div>
-      </section>
 
+        <div className="relative z-[1] w-full max-w-2xl sm:max-w-3xl md:max-w-4xl lg:max-w-5xl mx-auto text-center px-3 sm:px-4 md:px-6 lg:px-8 py-6 sm:py-8 md:py-10">
+          <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1 sm:py-1.5 rounded-full bg-cyan-950/50 border border-cyan-500/30 text-cyan-400 text-[10px] sm:text-xs md:text-sm font-mono mb-4 sm:mb-6 md:mb-8 backdrop-blur-md">
+            <Globe className="w-2.5 h-2.5 sm:w-3 sm:h-3 md:w-4 md:h-4 animate-pulse" />
+            <span>KW&SC CORE</span>
+          </div>
+
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-white tracking-tight leading-tight" style={{ fontFamily: "Roboto, sans-serif" }}>
+            TENDERS
+          </h2>
+
+          <p className="mt-3 sm:mt-4 md:mt-6 lg:mt-8 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-slate-300 max-w-xl sm:max-w-2xl md:max-w-3xl mx-auto font-light leading-relaxed sm:leading-relaxed md:leading-relaxed">
+            Official tender notices, procurement opportunities, and bidding documents
+          </p>
+        </div>
+
+        {/* Bottom fade */}
+        <div className="absolute bottom-0 left-0 w-full h-12 sm:h-16 md:h-20 lg:h-24 bg-gradient-to-t from-[#020617] to-transparent z-10"></div>
+      </section>
       {/* Content Section */}
-      <div className="bg-gradient-to-r from-blue-50 to-blue-100 py-20">
-        <div className="max-w-[85%] mx-auto px-6">
-          <div className="text-center mb-16">
+      <div className="bg-gradient-to-r from-blue-50 to-blue-100 py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28 2xl:py-32">
+        <div className="max-w-4xl sm:max-w-5xl md:max-w-6xl lg:max-w-7xl 2xl:max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 2xl:px-12">
+          <div className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-16 xl:mb-20 2xl:mb-24">
             <Fade direction="down" triggerOnce duration={1000}>
-      <h2 className="text-4xl md:text-6xl font-extrabold text-blue-900 tracking-tight leading-tight" style={{ fontFamily: "Roboto, sans-serif" }}>Tenders</h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-6xl font-extrabold text-blue-900 tracking-tight leading-tight" style={{ fontFamily: "Roboto, sans-serif" }}>Tenders</h2>
+              <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-lg 2xl:text-lg text-gray-600 max-w-3xl mx-auto mt-2 sm:mt-3 md:mt-4 lg:mt-5">
                 Official tender notices, procurement opportunities, and bidding documents
               </p>
             </Fade>
           </div>
 
           {/* Tabs */}
-          <div className="flex justify-center mb-12">
-            <div className="bg-white rounded-lg p-2 shadow-xl border border-blue-200">
+          <div className="flex justify-center mb-8 sm:mb-10 md:mb-12 lg:mb-14 xl:mb-16 2xl:mb-20">
+            <div className="bg-white rounded-lg p-1.5 sm:p-2 md:p-2.5 lg:p-3 shadow-lg md:shadow-xl border border-blue-200">
               <button
                 onClick={() => {
                   setActiveTab("open");
                   setOpenId(null);
                 }}
-                className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
-                  activeTab === "open"
-                    ? "bg-blue-600 text-white shadow-lg"
-                    : "text-gray-600 hover:text-blue-700 hover:bg-blue-50"
-                }`}
+                className={`px-3 sm:px-4 md:px-5 lg:px-6 xl:px-7 py-2 sm:py-2.5 md:py-3 lg:py-3 rounded-lg font-semibold text-xs sm:text-sm md:text-base lg:text-base transition-all duration-300 ${activeTab === "open"
+                  ? "bg-blue-600 text-white shadow-md"
+                  : "text-gray-600 hover:text-blue-700 hover:bg-blue-50"
+                  }`}
               >
-                Open Tenders 
+                Open Tenders
               </button>
               <button
                 onClick={() => {
                   setActiveTab("closed");
                   setOpenId(null);
                 }}
-                className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
-                  activeTab === "closed"
-                    ? "bg-blue-600 text-white shadow-lg"
-                    : "text-gray-600 hover:text-blue-700 hover:bg-blue-50"
-                }`}
+                className={`px-3 sm:px-4 md:px-5 lg:px-6 xl:px-7 py-2 sm:py-2.5 md:py-3 lg:py-3 rounded-lg font-semibold text-xs sm:text-sm md:text-base lg:text-base transition-all duration-300 ${activeTab === "closed"
+                  ? "bg-blue-600 text-white shadow-md"
+                  : "text-gray-600 hover:text-blue-700 hover:bg-blue-50"
+                  }`}
               >
                 Closed Tenders
               </button>
@@ -399,13 +416,12 @@ export default function Tenders() {
                   setActiveTab("cancelled");
                   setOpenId(null);
                 }}
-                className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
-                  activeTab === "cancelled"
-                    ? "bg-blue-600 text-white shadow-lg"
-                    : "text-gray-600 hover:text-blue-700 hover:bg-blue-50"
-                }`}
+                className={`px-3 sm:px-4 md:px-5 lg:px-6 xl:px-7 py-2 sm:py-2.5 md:py-3 lg:py-3 rounded-lg font-semibold text-xs sm:text-sm md:text-base lg:text-base transition-all duration-300 ${activeTab === "cancelled"
+                  ? "bg-blue-600 text-white shadow-md"
+                  : "text-gray-600 hover:text-blue-700 hover:bg-blue-50"
+                  }`}
               >
-                Cancelled Tenders 
+                Cancelled Tenders
               </button>
             </div>
           </div>
