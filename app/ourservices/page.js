@@ -163,49 +163,49 @@ export default function Services() {
         <div className="absolute inset-0 bg-blue-900/60 z-0"></div>
 
         {/* Content (Ensures text and images are above overlay) */}
-        <div className="relative z-[1] max-w-[75%] m-20 mx-auto flex items-center justify-center text-center">
-          <div className="w-[85%]">
-            <h2 className="text-[8vh] font-bold">
+        <div className="relative z-[1] max-w-2xl sm:max-w-3xl md:max-w-4xl lg:max-w-5xl 2xl:max-w-6xl mx-auto flex items-center justify-center text-center px-3 sm:px-4 md:px-6 lg:px-8">
+          <div className="w-full">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-6xl font-bold">
               What We Do
             </h2>
-            <p className="mt-6 text-[3.5vh] ">
+            <p className="mt-3 sm:mt-4 md:mt-6 lg:mt-8 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">
               Comprehensive water and sewerage services ensuring clean water supply
               and<br /> efficient wastewater management for Karachi.
             </p>
           </div>
         </div>
       </section>
-      <div className="w-full py-12 mt-20">
-        <div className="text-gray-900 max-w-[90%] mx-auto">
-          <header className="text-center mb-10">
-            <h1 className="text-4xl font-bold mb-4">What We Do</h1>
-            <p className="text-gray-600 max-w-3xl mx-auto">
+      <div className="w-full py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28 2xl:py-32 mt-12 sm:mt-16 md:mt-20 lg:mt-24">
+        <div className="text-gray-900 max-w-2xl sm:max-w-3xl md:max-w-4xl lg:max-w-5xl 2xl:max-w-6xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 2xl:px-12">
+          <header className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-14 xl:mb-16">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-6xl font-bold mb-2 sm:mb-3 md:mb-4 lg:mb-5">What We Do</h1>
+            <p className="text-gray-600 max-w-3xl mx-auto text-xs sm:text-sm md:text-base lg:text-lg">
               KW&SC provides comprehensive water and sewerage services across Karachi, ensuring clean water supply and efficient wastewater management for all residents.
             </p>
           </header>
-          
+
           {/* Water Supply Section */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold text-center mb-8 text-blue-900">Water Supply Services</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-              <div className="bg-white rounded-xl shadow-lg p-8">
-                <h3 className="text-xl font-bold mb-4 text-blue-800">Sources of Water Supply</h3>
-                <p className="text-gray-600 mb-4">
+          <div className="mb-12 sm:mb-16 md:mb-20 lg:mb-24 xl:mb-28 2xl:mb-32">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-center mb-6 sm:mb-8 md:mb-10 lg:mb-12 text-blue-900">Water Supply Services</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 lg:gap-10 xl:gap-12 2xl:gap-14 mb-8 sm:mb-10 md:mb-12 lg:mb-14">
+              <div className="bg-white rounded-lg sm:rounded-xl md:rounded-xl lg:rounded-2xl shadow-lg p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12 2xl:p-14">
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 sm:mb-3 md:mb-4 text-blue-800">Sources of Water Supply</h3>
+                <p className="text-gray-600 mb-3 sm:mb-4 md:mb-4 text-xs sm:text-sm md:text-base">
                   KW&SC sources water from multiple locations including Hub Dam, Keenjhar Lake, and other strategic water sources to ensure adequate supply for Karachi's growing population.
                 </p>
-                <ul className="space-y-2 text-gray-600">
+                <ul className="space-y-1 sm:space-y-2 md:space-y-2 text-gray-600 text-xs sm:text-sm md:text-base">
                   <li>• Hub Dam - Primary water source</li>
                   <li>• Keenjhar Lake - Secondary source</li>
                   <li>• Groundwater extraction</li>
                   <li>• Desalination plants</li>
                 </ul>
               </div>
-              <div className="bg-white rounded-xl shadow-lg p-8">
-                <h3 className="text-xl font-bold mb-4 text-blue-800">Water Filtration Process</h3>
-                <p className="text-gray-600 mb-4">
+              <div className="bg-white rounded-lg sm:rounded-xl md:rounded-xl lg:rounded-2xl shadow-lg p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12 2xl:p-14">
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 sm:mb-3 md:mb-4 text-blue-800">Water Filtration Process</h3>
+                <p className="text-gray-600 mb-3 sm:mb-4 md:mb-4 text-xs sm:text-sm md:text-base">
                   Our state-of-the-art filtration plants ensure that water meets international quality standards before distribution to consumers.
                 </p>
-                <ul className="space-y-2 text-gray-600">
+                <ul className="space-y-1 sm:space-y-2 md:space-y-2 text-gray-600 text-xs sm:text-sm md:text-base">
                   <li>• Multi-stage filtration process</li>
                   <li>• Chlorination for disinfection</li>
                   <li>• Quality testing laboratories</li>
@@ -213,39 +213,39 @@ export default function Services() {
                 </ul>
               </div>
             </div>
-            
+
             {/* Maps Section */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-              <div className="bg-white rounded-xl shadow-lg p-8">
-                <h3 className="text-xl font-bold mb-4 text-blue-800">Bulk Water Map</h3>
-                <p className="text-gray-600 mb-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 lg:gap-10 xl:gap-12 2xl:gap-14 mb-8 sm:mb-10 md:mb-12 lg:mb-14">
+              <div className="bg-white rounded-lg sm:rounded-xl md:rounded-xl lg:rounded-2xl shadow-lg p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12 2xl:p-14">
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 sm:mb-3 md:mb-4 text-blue-800">Bulk Water Map</h3>
+                <p className="text-gray-600 mb-3 sm:mb-4 md:mb-4 text-xs sm:text-sm md:text-base">
                   View our comprehensive bulk water distribution network across Karachi.
                 </p>
                 <a
                   href="https://www.kwsc.gos.pk/assets/images/Bulk_map.jpeg"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center text-blue-600 hover:text-blue-800 font-semibold"
+                  className="inline-flex items-center text-blue-600 hover:text-blue-800 font-semibold text-xs sm:text-sm md:text-base"
                 >
                   View Bulk Water Map
-                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-3 sm:w-4 h-3 sm:h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                   </svg>
                 </a>
               </div>
-              <div className="bg-white rounded-xl shadow-lg p-8">
-                <h3 className="text-xl font-bold mb-4 text-blue-800">Distribution Map</h3>
-                <p className="text-gray-600 mb-4">
+              <div className="bg-white rounded-lg sm:rounded-xl md:rounded-xl lg:rounded-2xl shadow-lg p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12 2xl:p-14">
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 sm:mb-3 md:mb-4 text-blue-800">Distribution Map</h3>
+                <p className="text-gray-600 mb-3 sm:mb-4 md:mb-4 text-xs sm:text-sm md:text-base">
                   Explore our water distribution network covering all areas of Karachi.
                 </p>
                 <a
                   href="https://www.kwsc.gos.pk/assets/images/Distribution_map.jpeg"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center text-blue-600 hover:text-blue-800 font-semibold"
+                  className="inline-flex items-center text-blue-600 hover:text-blue-800 font-semibold text-xs sm:text-sm md:text-base"
                 >
                   View Distribution Map
-                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-3 sm:w-4 h-3 sm:h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                   </svg>
                 </a>
@@ -254,27 +254,27 @@ export default function Services() {
           </div>
 
           {/* Sewerage Section */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold text-center mb-8 text-blue-900">Sewerage Services</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-              <div className="bg-white rounded-xl shadow-lg p-8">
-                <h3 className="text-xl font-bold mb-4 text-blue-800">Sewerage Infrastructure</h3>
-                <p className="text-gray-600 mb-4">
+          <div className="mb-12 sm:mb-16 md:mb-20 lg:mb-24 xl:mb-28 2xl:mb-32">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-center mb-6 sm:mb-8 md:mb-10 lg:mb-12 text-blue-900">Sewerage Services</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 lg:gap-10 xl:gap-12 2xl:gap-14 mb-8 sm:mb-10 md:mb-12 lg:mb-14">
+              <div className="bg-white rounded-lg sm:rounded-xl md:rounded-xl lg:rounded-2xl shadow-lg p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12 2xl:p-14">
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 sm:mb-3 md:mb-4 text-blue-800">Sewerage Infrastructure</h3>
+                <p className="text-gray-600 mb-3 sm:mb-4 md:mb-4 text-xs sm:text-sm md:text-base">
                   Comprehensive sewerage network covering residential, commercial, and industrial areas across Karachi.
                 </p>
-                <ul className="space-y-2 text-gray-600">
+                <ul className="space-y-1 sm:space-y-2 md:space-y-2 text-gray-600 text-xs sm:text-sm md:text-base">
                   <li>• Extensive sewerage network</li>
                   <li>• Pumping stations</li>
                   <li>• Treatment facilities</li>
                   <li>• Maintenance services</li>
                 </ul>
               </div>
-              <div className="bg-white rounded-xl shadow-lg p-8">
-                <h3 className="text-xl font-bold mb-4 text-blue-800">Sewerage Treatment</h3>
-                <p className="text-gray-600 mb-4">
+              <div className="bg-white rounded-lg sm:rounded-xl md:rounded-xl lg:rounded-2xl shadow-lg p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12 2xl:p-14">
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 sm:mb-3 md:mb-4 text-blue-800">Sewerage Treatment</h3>
+                <p className="text-gray-600 mb-3 sm:mb-4 md:mb-4 text-xs sm:text-sm md:text-base">
                   Advanced treatment plants ensure proper processing of wastewater before disposal, protecting the environment.
                 </p>
-                <ul className="space-y-2 text-gray-600">
+                <ul className="space-y-1 sm:space-y-2 md:space-y-2 text-gray-600 text-xs sm:text-sm md:text-base">
                   <li>• Primary treatment processes</li>
                   <li>• Secondary treatment systems</li>
                   <li>• Tertiary treatment facilities</li>
@@ -282,39 +282,39 @@ export default function Services() {
                 </ul>
               </div>
             </div>
-            
-            <div className="bg-white rounded-xl shadow-lg p-8">
-              <h3 className="text-xl font-bold mb-4 text-blue-800">Sewerage Map</h3>
-              <p className="text-gray-600 mb-4">
+
+            <div className="bg-white rounded-lg sm:rounded-xl md:rounded-xl lg:rounded-2xl shadow-lg p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12 2xl:p-14">
+              <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 sm:mb-3 md:mb-4 text-blue-800">Sewerage Map</h3>
+              <p className="text-gray-600 mb-3 sm:mb-4 md:mb-4 text-xs sm:text-sm md:text-base">
                 View our comprehensive sewerage network and pumping stations across Karachi.
               </p>
               <a
                 href="https://www.kwsc.gos.pk/assets/images/sewerage-map.jpeg"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center text-blue-600 hover:text-blue-800 font-semibold"
+                className="inline-flex items-center text-blue-600 hover:text-blue-800 font-semibold text-xs sm:text-sm md:text-base"
               >
                 View Sewerage Map
-                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-3 sm:w-4 h-3 sm:h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
               </a>
             </div>
           </div>
 
-          
+
 
           {/* Revenue Resource Generation */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold text-center mb-8 text-blue-900">Revenue Resource Generation</h2>
-            <div className="bg-white rounded-xl shadow-lg p-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="mb-12 sm:mb-16 md:mb-20 lg:mb-24 xl:mb-28 2xl:mb-32">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-center mb-6 sm:mb-8 md:mb-10 lg:mb-12 text-blue-900">Revenue Resource Generation</h2>
+            <div className="bg-white rounded-lg sm:rounded-xl md:rounded-xl lg:rounded-2xl shadow-lg p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12 2xl:p-14">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 lg:gap-10">
                 <div>
-                  <h3 className="text-xl font-bold mb-4 text-blue-800">Billing & Collection</h3>
-                  <p className="text-gray-600 mb-4">
+                  <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 sm:mb-3 md:mb-4 text-blue-800">Billing & Collection</h3>
+                  <p className="text-gray-600 mb-3 sm:mb-4 md:mb-4 text-xs sm:text-sm md:text-base">
                     Efficient billing system ensuring accurate charges and timely collection of water and sewerage fees.
                   </p>
-                  <ul className="space-y-2 text-gray-600">
+                  <ul className="space-y-1 sm:space-y-2 md:space-y-2 text-gray-600 text-xs sm:text-sm md:text-base">
                     <li>• Online billing system</li>
                     <li>• Multiple payment options</li>
                     <li>• Automated meter reading</li>
@@ -322,18 +322,18 @@ export default function Services() {
                   </ul>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-4 text-blue-800">Connection Services</h3>
-                  <p className="text-gray-600 mb-4">
+                  <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 sm:mb-3 md:mb-4 text-blue-800">Connection Services</h3>
+                  <p className="text-gray-600 mb-3 sm:mb-4 md:mb-4 text-xs sm:text-sm md:text-base">
                     Streamlined process for new connections and service modifications.
                   </p>
                   <a
                     href="https://www.kwsc.gos.pk/assets/documents/Connection-Guideline-RRG.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center text-blue-600 hover:text-blue-800 font-semibold"
+                    className="inline-flex items-center text-blue-600 hover:text-blue-800 font-semibold text-xs sm:text-sm md:text-base"
                   >
                     View Connection Guidelines
-                    <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-3 sm:w-4 h-3 sm:h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                     </svg>
                   </a>
@@ -345,27 +345,28 @@ export default function Services() {
 
           <Swiper
             modules={[Navigation, Pagination, Autoplay]}
-            slidesPerView={3}
-            spaceBetween={30}
+            slidesPerView={1}
+            spaceBetween={0}
             autoplay={false}
             breakpoints={{
-              640: { slidesPerView: 1 },
-              768: { slidesPerView: 2 },
-              1024: { slidesPerView: 3 },
+              320: { slidesPerView: 1, spaceBetween: 0 },
+              640: { slidesPerView: 1, spaceBetween: 0 },
+              768: { slidesPerView: 2, spaceBetween: 16 },
+              1024: { slidesPerView: 3, spaceBetween: 20 },
             }}
             navigation
             pagination={{ clickable: true }}
-            className="pb-12"
+            className="pb-12 sm:pb-14 md:pb-16 lg:pb-20"
           >
             {services.map((service, index) => (
               <SwiperSlide key={index}>
                 <div
-                  className={`h-[600px] p-6 rounded-lg shadow-lg transition-all duration-300 relative overflow-hidden bg-gradient-to-br ${service.gradient} bg-opacity-100 card`}
+                  className={`h-64 sm:h-80 md:h-96 lg:h-[600px] p-4 sm:p-6 md:p-5 lg:p-6 rounded-lg sm:rounded-lg md:rounded-lg lg:rounded-lg shadow-lg transition-all duration-300 relative overflow-hidden bg-gradient-to-br ${service.gradient} bg-opacity-100 card`}
                 >
                   <div className="flex flex-col items-center text-center h-full justify-center">
-                    <div className="text-6xl mb-4">{service.icon}</div>
-                    <h2 className="text-2xl font-bold mb-2">{service.title}</h2>
-                    <p className="text-gray-700">{service.description}</p>
+                    <div className="text-5xl sm:text-6xl md:text-5xl lg:text-6xl mb-3 sm:mb-4 md:mb-4 lg:mb-4">{service.icon}</div>
+                    <h2 className="text-base sm:text-lg md:text-lg lg:text-2xl font-bold mb-2 sm:mb-2 md:mb-2 lg:mb-2">{service.title}</h2>
+                    <p className="text-xs sm:text-sm md:text-sm lg:text-base text-gray-100">{service.description}</p>
                   </div>
                 </div>
               </SwiperSlide>
