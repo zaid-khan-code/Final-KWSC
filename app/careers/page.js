@@ -116,21 +116,21 @@ export default function Careers() {
   return (
     <>
       {loading && <Loader />}
-      
+
       {/* 1. Enhanced Hero Section */}
-       <section  className={`relative h-[15vh] md:h-[70vh] transition-opacity duration-700 bg-[url('/teentalwarkarachi.gif')] bg-cover bg-center text-white flex justify-center items-center`}
->
-  <div className="absolute inset-0 bg-blue-900/80 z-0 backdrop-blur-sm"></div>
-        
-        <div className="relative z-[1] max-w-5xl mx-auto px-6 text-center">
+      <section className={`relative h-screen transition-opacity duration-700 bg-[url('/teentalwarkarachi.gif')] bg-cover bg-center text-white flex justify-center items-center`}
+      >
+        <div className="absolute inset-0 bg-blue-900/80 z-0 backdrop-blur-sm"></div>
+
+        <div className="relative z-[1] max-w-5xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 text-center">
           <Fade direction="up" triggerOnce duration={1000} cascade damping={0.1}>
-               <h2 className="text-5xl md:text-6xl font-extrabold text-white tracking-tight leading-tight" style={{ fontFamily: "Roboto, sans-serif" }}>
-              Careers at 
-              <span className="block mt-2 bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-300">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight" style={{ fontFamily: "Roboto, sans-serif" }}>
+              Careers at
+              <span className="block mt-2 sm:mt-3 md:mt-4 bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-300">
                 KW&SC
               </span>
             </h2>
-            <p className="mt-6 text-xl md:text-2xl text-blue-100/90 font-light">
+            <p className="mt-4 sm:mt-5 md:mt-6 text-sm sm:text-base md:text-lg lg:text-xl text-blue-100/90 font-light">
               Join our mission to provide clean water and efficient sewerage services to Karachi.
             </p>
           </Fade>
@@ -138,75 +138,75 @@ export default function Careers() {
       </section>
 
       {/* 2. Opportunities & Openings Section */}
-      <div className="bg-white py-20 md:py-32">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-20">
+      <div className="bg-white py-8 sm:py-12 md:py-20 lg:py-32">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+          <div className="text-center mb-10 sm:mb-14 md:mb-20">
             <Fade direction="down" triggerOnce duration={1000}>
-              <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-3 sm:mb-4 md:mb-5">
                 Opportunities To Make A Difference
               </h1>
-              <p className="text-xl text-gray-600 max-w-4xl mx-auto">
+              <p className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-600 max-w-4xl mx-auto px-2 sm:px-0">
                 Discover the path that aligns with your professional aspirations and contribute to the core infrastructure of the city.
               </p>
             </Fade>
           </div>
 
           {/* Career Opportunities Cards (Grid) */}
-          <h2 className="text-3xl font-bold text-gray-800 mb-10 border-b-2 border-blue-500/50 pb-2">
-              Explore Programs
+          <h2 className="text-2xl sm:text-2xl md:text-3xl lg:text-3xl font-bold text-gray-800 mb-6 sm:mb-8 md:mb-10 border-b-2 border-blue-500/50 pb-2 sm:pb-3">
+            Explore Programs
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-20">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 lg:gap-10 mb-12 sm:mb-16 md:mb-20">
             {careerOpportunities.map((opportunity, index) => (
-              <Fade 
-                key={index} 
-                direction="up" 
-                triggerOnce 
-                duration={800} 
+              <Fade
+                key={index}
+                direction="up"
+                triggerOnce
+                duration={800}
                 delay={index * 150}
                 className="h-full"
               >
-                <div 
-                  className="bg-white border border-gray-100 rounded-2xl shadow-xl p-8 flex flex-col justify-between 
-                             transition-all duration-300 hover:shadow-2xl hover:scale-[1.02] hover:border-blue-500/50 h-full"
+                <div
+                  className="bg-white border border-gray-100 rounded-lg sm:rounded-xl md:rounded-2xl shadow-md sm:shadow-lg md:shadow-xl p-4 sm:p-5 md:p-6 lg:p-8 flex flex-col justify-between 
+                             transition-all duration-300 hover:shadow-lg sm:hover:shadow-xl md:hover:shadow-2xl hover:scale-[1.02] hover:border-blue-500/50 h-full"
                 >
                   <div>
-                    <span className="bg-blue-600 text-white px-4 py-1.5 rounded-full text-sm font-semibold mb-4 inline-block shadow-md">
+                    <span className="bg-blue-600 text-white px-2.5 sm:px-3 md:px-4 py-1 sm:py-1.5 rounded-full text-[10px] sm:text-xs md:text-sm font-semibold mb-3 sm:mb-4 inline-block shadow-md">
                       {opportunity.type}
                     </span>
-                    <h3 className="text-2xl font-extrabold text-gray-900 my-4 flex items-center">
-                      <Briefcase className="w-6 h-6 mr-3 text-blue-600" />
+                    <h3 className="text-lg sm:text-xl md:text-2xl lg:text-2xl font-extrabold text-gray-900 my-3 sm:my-4 flex items-center">
+                      <Briefcase className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3 text-blue-600 flex-shrink-0" />
                       {opportunity.title}
                     </h3>
-                    <p className="text-gray-700 leading-relaxed mb-6 border-b border-gray-100 pb-4">
+                    <p className="text-xs sm:text-sm md:text-base text-gray-700 leading-relaxed mb-4 sm:mb-5 md:mb-6 border-b border-gray-100 pb-3 sm:pb-4 md:pb-4">
                       {opportunity.description}
                     </p>
-                    
-                    <div className="mb-6">
-                      <h4 className="font-bold text-gray-900 mb-3 flex items-center text-lg">
-                        <Zap className="w-5 h-5 mr-2 text-green-500" />
+
+                    <div className="mb-4 sm:mb-5 md:mb-6">
+                      <h4 className="font-bold text-xs sm:text-sm md:text-base lg:text-lg text-gray-900 mb-2 sm:mb-3 flex items-center">
+                        <Zap className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-green-500 flex-shrink-0" />
                         Benefits & Scope:
                       </h4>
-                      <ul className="space-y-3">
+                      <ul className="space-y-2 sm:space-y-2.5 md:space-y-3">
                         {opportunity.features.map((feature, idx) => (
-                          <li key={idx} className="flex items-start text-gray-600 text-sm">
-                            <Zap className="w-4 h-4 text-green-500 mt-1 flex-shrink-0 mr-2" />
+                          <li key={idx} className="flex items-start text-xs sm:text-sm text-gray-600">
+                            <Zap className="w-3 h-3 sm:w-4 sm:h-4 text-green-500 mt-0.5 sm:mt-1 flex-shrink-0 mr-2" />
                             {feature}
                           </li>
                         ))}
                       </ul>
                     </div>
                   </div>
-                  
+
                   <Link
                     href={opportunity.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center w-full justify-center px-6 py-3 mt-4 
-                               bg-blue-600 text-white font-semibold rounded-lg transition-all 
+                    className="inline-flex items-center w-full justify-center px-4 sm:px-5 md:px-6 py-2.5 sm:py-3 md:py-3 mt-3 sm:mt-4 
+                               bg-blue-600 text-white font-semibold text-sm sm:text-base rounded-lg transition-all 
                                hover:bg-blue-700 hover:shadow-lg shadow-blue-500/30 group"
                   >
                     View Details
-                    <ArrowUpRight className="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                    <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
                   </Link>
                 </div>
               </Fade>
@@ -214,66 +214,66 @@ export default function Careers() {
           </div>
 
           {/* Current Job Openings (Table-like Grid) */}
-          <h2 className="text-3xl font-bold text-gray-800 mb-10 border-b-2 border-blue-500/50 pb-2">
-              Current Openings
+          <h2 className="text-2xl sm:text-2xl md:text-3xl lg:text-3xl font-bold text-gray-800 mb-6 sm:mb-8 md:mb-10 border-b-2 border-blue-500/50 pb-2 sm:pb-3">
+            Current Openings
           </h2>
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4 md:space-y-4">
             {currentOpenings.map((opening, index) => (
               <Fade key={opening.id} direction="up" triggerOnce duration={800} delay={index * 50}>
-                <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-md grid grid-cols-1 lg:grid-cols-5 items-center gap-4 transition-all duration-300 hover:shadow-lg hover:border-blue-300">
-                  
+                <div className="bg-white border border-gray-200 rounded-lg sm:rounded-lg md:rounded-xl p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm sm:shadow-md grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 items-start sm:items-center gap-3 sm:gap-4 md:gap-4 transition-all duration-300 hover:shadow-md sm:hover:shadow-lg hover:border-blue-300">
+
                   {/* Position */}
-                  <h3 className="text-xl font-bold text-blue-800 col-span-2">
+                  <h3 className="text-base sm:text-lg md:text-xl font-bold text-blue-800 sm:col-span-2">
                     {opening.position}
                   </h3>
-                  
+
                   {/* Details (Flex/Icons) */}
-                  <div className="flex items-center text-gray-600 text-sm">
-                    <Building className="w-4 h-4 mr-2 text-blue-500 flex-shrink-0" />
-                    {opening.department}
+                  <div className="flex items-center text-gray-600 text-xs sm:text-sm">
+                    <Building className="w-3.5 h-3.5 sm:w-4 sm:h-4 mr-2 text-blue-500 flex-shrink-0" />
+                    <span className="truncate">{opening.department}</span>
                   </div>
-                  <div className="flex items-center text-gray-600 text-sm">
-                    <MapPin className="w-4 h-4 mr-2 text-blue-500 flex-shrink-0" />
+                  <div className="flex items-center text-gray-600 text-xs sm:text-sm">
+                    <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 mr-2 text-blue-500 flex-shrink-0" />
                     {opening.location}
                   </div>
-                  <div className="flex items-center text-gray-600 text-sm">
-                    <Clock className="w-4 h-4 mr-2 text-blue-500 flex-shrink-0" />
+                  <div className="flex items-center text-gray-600 text-xs sm:text-sm">
+                    <Clock className="w-3.5 h-3.5 sm:w-4 sm:h-4 mr-2 text-blue-500 flex-shrink-0" />
                     {opening.experience}
                   </div>
 
                   {/* Apply Button */}
-                  <button className="lg:col-span-1 w-full lg:w-auto px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors shadow-md">
+                  <button className="w-full sm:col-span-2 lg:col-span-1 lg:w-auto px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 bg-blue-600 text-white font-semibold text-xs sm:text-sm rounded-lg hover:bg-blue-700 transition-colors shadow-sm sm:shadow-md">
                     Apply Now
                   </button>
                 </div>
               </Fade>
             ))}
           </div>
-          
+
           {/* 3. Contact Information / CTA */}
-          <div className="mt-20 bg-blue-800 rounded-xl shadow-2xl p-10 md:p-14 text-white">
+          <div className="mt-12 sm:mt-16 md:mt-20 bg-blue-800 rounded-lg sm:rounded-lg md:rounded-xl shadow-lg sm:shadow-xl md:shadow-2xl p-5 sm:p-8 md:p-10 lg:p-14 text-white">
             <Fade direction="up" triggerOnce duration={1000} delay={200}>
               <div className="text-center">
-                <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-extrabold mb-3 sm:mb-4 md:mb-5">
                   Ready to Start Your KW&SC Career?
                 </h2>
-                <p className="text-blue-100 mb-8 max-w-3xl mx-auto">
+                <p className="text-xs sm:text-sm md:text-base text-blue-100 mb-6 sm:mb-7 md:mb-8 max-w-3xl mx-auto px-2 sm:px-0">
                   For detailed information, reach out to our Human Resources department directly.
                 </p>
-                
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-4 justify-center">
                   <a
                     href="mailto:hr@kwsc.gos.pk"
-                    className="inline-flex items-center px-8 py-4 bg-cyan-400 text-gray-900 font-bold rounded-lg transition-all hover:bg-cyan-300 shadow-lg shadow-cyan-400/50"
+                    className="inline-flex items-center justify-center px-4 sm:px-6 md:px-8 py-3 sm:py-3.5 md:py-4 bg-cyan-400 text-gray-900 font-semibold sm:font-bold text-xs sm:text-sm md:text-base rounded-lg transition-all hover:bg-cyan-300 shadow-md sm:shadow-lg shadow-cyan-400/50"
                   >
-                    <Mail className="w-5 h-5 mr-3" />
+                    <Mail className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3 flex-shrink-0" />
                     Email: info@kwsc.gos.pk
                   </a>
                   <a
                     href="tel:+92021111597200"
-                    className="inline-flex items-center px-8 py-4 bg-white/10 text-white font-bold rounded-lg border border-white/20 transition-colors hover:bg-white/20"
+                    className="inline-flex items-center justify-center px-4 sm:px-6 md:px-8 py-3 sm:py-3.5 md:py-4 bg-white/10 text-white font-semibold sm:font-bold text-xs sm:text-sm md:text-base rounded-lg border border-white/20 transition-colors hover:bg-white/20"
                   >
-                    <Phone className="w-5 h-5 mr-3" />
+                    <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3 flex-shrink-0" />
                     Call: (+92) 021 111 597 200
                   </a>
                 </div>
